@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icon-192.png">
+</head>
+<body>
+    <div class="top-buttons">
+        <button class="top-btn" id="langBtn" title="Switch to English">🇬🇧</button>
+        <button class="top-btn" id="settingsBtn" title="Einstellungen">⚙️</button>
+        <button class="top-btn" id="darkBtn" title="Dark Mode">🌙</button>
+    </div>
+    <div class="settings-panel" id="settingsPanel" style="display: none;">
+        <h3 data-lang="settings">Einstellungen</h3>
+        <div class="settings-section">
+            <label data-lang="accent_color">Akzentfarbe</label>
+            <div class="color-circles">
+                <div class="color-circle color-purple active" data-color="purple" title="Lila"></div>
+                <div class="color-circle color-blue" data-color="blue" title="Blau"></div>
+                <div class="color-circle color-green" data-color="green" title="Grün"></div>
+                <div class="color-circle color-orange" data-color="orange" title="Orange"></div>
+                <div class="color-circle color-pink" data-color="pink" title="Pink"></div>
+            </div>
+        </div>
+        <div class="settings-section">
+            <label data-lang="font_size">Schriftgrösse</label>
+            <div class="font-buttons">
+                <button class="font-btn" data-font="small">A−</button>
+                <button class="font-btn active" data-font="medium">A</button>
+                <button class="font-btn" data-font="large">A+</button>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <header>
+            <h1>📋 Task Tracker</h1>
+            <p data-lang="subtitle">Behalte deine Aufgaben und Projekte im Blick</p>
+        </header>
+        <section class="input-section">
+            <div class="input-row">
+                <input type="text" id="taskInput" placeholder="Neue Aufgabe eingeben..." data-lang-placeholder="new_task" />
+                <div class="dropdown" id="projectDropdown">
+                    <button class="dropdown-btn" id="projectDropdownBtn" data-lang="default_project">Allgemein ▾</button>
+                    <div class="dropdown-content" id="projectDropdownContent">
+                        <div class="dropdown-search"><input type="text" id="projectSearchInput" placeholder="Projekt suchen..." data-lang-placeholder="project_search" /></div>
+                        <div class="dropdown-divider"></div>
+                        <div class="dropdown-items" id="projectDropdownItems"></div>
+                        <div class="dropdown-divider"></div>
+                        <div class="dropdown-new">
+                            <input type="text" id="projectNewInput" placeholder="Neuer Projektname..." data-lang-placeholder="new_project_name" />
+                            <button class="dropdown-new-btn" id="projectNewBtn" data-lang="create">+ Erstellen</button>
+                        </div>
+                    </div>
+                </div>
+                <select id="prioritySelect">
+                    <option value="low" data-lang="prio_low">🟢 Niedrig</option>
+                    <option value="medium" selected data-lang="prio_medium">🟡 Mittel</option>
+                    <option value="high" data-lang="prio_high">🔴 Hoch</option>
+                </select>
+                <button id="addBtn" data-lang="add">Hinzufügen</button>
+            </div>
+            <div class="input-row" style="margin-top: 10px;">
+                <input type="date" id="dueDateInput" title="Fälligkeitsdatum (optional)" data-lang-title="due_date" />
+                <input type="text" id="tagInput" placeholder="Tags (kommagetrennt)..." data-lang-placeholder="tags" />
+            </div>
+        </section>
+        <section class="filter-search-row">
+            <div class="filter-section">
+<button class="filter-btn active" data-filter="all" data-lang="filter_all">Alle</button>
+                <button class="filter-btn" data-filter="open" data-lang="filter_open">Offen</button>
+                <button class="filter-btn" data-filter="done" data-lang="filter_done">Erledigt</button>
+                <button class="filter-btn" data-filter="overdue" data-lang="filter_overdue">Überfällig</button>
+            </div>
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Tasks durchsuchen..." data-lang-placeholder="search" />
+            </div>
+        </section>
+        <section class="tag-filter-section" id="tagFilterSection"></section>
+        <section class="stats">
+            <div class="stat-card"><div class="number" id="totalTasks">0</div><div class="label" data-lang="total">Gesamt</div></div>
+            <div class="stat-card"><div class="number" id="openTasks">0</div><div class="label" data-lang="open">Offen</div></div>
+            <div class="stat-card"><div class="number" id="doneTasks">0</div><div class="label" data-lang="done_label">Erledigt</div></div>
+        </section>
+        <div class="stats-extra" id="statsExtra"></div>
+        <section class="projects-grid" id="projectsGrid">
+            <div class="project-card" style="grid-column: 1 / -1;">
+                <div class="empty-state"><div class="empty-icon">📝</div><p data-lang="empty_state">Noch keine Tasks da. Füge oben deine erste Aufgabe hinzu!</p></div>
+            </div>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
