@@ -1,6 +1,6 @@
 Task-Tracker
 
-A customizable task tracker for private use. Developed as Web-App :) My goal was to get used to object-oriented programming as well as to practice solving problems that come with it. My main focus is usually Python programming, but I wanted to try to develope a frontend project to get used to publishing and to get to know the base constructs for frontend before I dive deeper into backend with Python. It's also one of my first projects I uploaded to Github. Hopefully someone besides me can use it :) 
+A customizable task tracker for private use, developed as Web-App. My goal was to get used to object-oriented programming as well as to practice solving problems that come with it. My main focus is usually Python programming, but I wanted to try to develope a frontend project to get used to publishing and to get to know the base constructs for frontend before I dive deeper into backend with Python. It's also one of my first projects I uploaded to Github. Hopefully someone besides me can use it :) 
 
 ## Feature Overview
 
